@@ -8,63 +8,35 @@
 </head>
 <body>
     
-    <form id="meuForm">
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="usuario_nome" />
-        </div>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="usuario_email" />
-        </div>
-        <div>
-            <label for="msg">Mensagem:</label>
-            <textarea id="msg" name="usuario_msg"></textarea>
-        </div>
+  <form id="meuForm">
+    <fieldset>
+        <legend>Formulário de Contato</legend>
+        
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="usuario_nome" />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="usuario_email" />
+
+        <label for="msg">Mensagem:</label>
+        <textarea id="msg" name="usuario_msg"></textarea>
+    </fieldset>
     
-        <div class="button">
-            <button type="submit">Enviar sua mensagem</button>
-        </div>
-    </form>
+    <footer class="button">
+        <button type="submit">Enviar sua mensagem</button>
+    </footer>
+</form>
 
-    <!-- Seção para exibir os dados do formulário -->
-    <div id="resultados" style="margin-top: 20px;">
-        <h2>Dados do Formulário:</h2>
-        <p><strong>Nome:</strong> <span id="exibeNome"></span></p>
-        <p><strong>Email:</strong> <span id="exibeEmail"></span></p>
-        <p><strong>Mensagem:</strong> <span id="exibeMensagem"></span></p>
-    </div>
+<!-- Seção para exibir os dados do formulário -->
+<section id="resultados" style="margin-top: 20px;">
+    <h2>Dados do Formulário:</h2>
+    <p><strong>Nome:</strong> <span id="exibeNome"></span></p>
+    <p><strong>Email:</strong> <span id="exibeEmail"></span></p>
+    <p><strong>Mensagem:</strong> <span id="exibeMensagem"></span></p>
+</section>
 
-    <script>
-        document.getElementById("meuForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
 
-            // Captura os valores dos campos do formulário
-            let nome = document.getElementById("nome").value;
-            let email = document.getElementById("email").value;
-            let mensagem = document.getElementById("msg").value;
-
-            if (nome === "" || email === "" || mensagem === "") {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            // Exemplo de validação de email simples
-            let emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailValido.test(email)) {
-                alert("Por favor, insira um e-mail válido.");
-                return;
-            }
-
-            // Exibe os valores nos elementos HTML
-            document.getElementById("exibeNome").innerText = nome;
-            document.getElementById("exibeEmail").innerText = email;
-            document.getElementById("exibeMensagem").innerText = mensagem;
-
-            // Mensagem de sucesso (opcional)
-            alert("Formulário enviado com sucesso!");
-        });
-    </script>
+    <script src="script.js"></script>
     
 </body>
 </html>
