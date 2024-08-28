@@ -7,6 +7,7 @@ document.getElementById("meuForm").addEventListener("submit", function(event) {
     let email = document.getElementById("email").value;
     let mensagem = document.getElementById("msg").value;
 
+   // verificação de campos vazios
     if (nome === "" || email === "" || mensagem === "") {
         alert("Por favor, preencha todos os campos.");
         return;
